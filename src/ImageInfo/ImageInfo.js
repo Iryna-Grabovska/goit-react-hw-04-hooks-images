@@ -34,20 +34,14 @@ export default function ImageInfo({ query }) {
         return respons.json();
       })
       .then(photo => {
-        // if (page === 1) {
         setPhoto([...photo.hits]);
-        // } else {
-        //   setPhoto(prevState => [...prevState, ...photo.hits]);
-        // }
         setPage(page => page + 1);
         setStatus(Status.RESOLVED);
       })
       .catch(error => setStatus(Status.REJECTED));
+    // eslint-disable-next-line
   }, [query]);
 
-  // const loadMore = e => {
-  //   setPage(page => page + 1);
-  // };
   const loadMore = e => {
     setStatus(Status.PENDING);
     fetch(
