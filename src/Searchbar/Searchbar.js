@@ -1,16 +1,9 @@
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 import s from './Searchbar.module.css';
-// import { ImSearch } from 'react-icons.in';
 import PropTypes from 'prop-types';
 
 export default function Searchbar({ onSubmit }) {
-  // static propTypes = {
-  //   onSubmit: PropTypes.func,
-  // };
-  // state = {
-  //   query: '',
-  // };
   const [query, setQuery] = useState('');
   const handleQueryChange = event => {
     setQuery(event.currentTarget.value.toLowerCase());
@@ -31,7 +24,6 @@ export default function Searchbar({ onSubmit }) {
       <form className={s.SearchForm} onSubmit={handleQuerySubmit}>
         <button type="submit" className={s.SearchFormButton}>
           <span className={s.SearchFormButton__label}>Search</span>
-          {/* <ImSearch /> */}
         </button>
 
         <input
