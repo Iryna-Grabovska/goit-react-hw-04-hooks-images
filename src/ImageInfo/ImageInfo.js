@@ -2,8 +2,8 @@ import ImageGallery from 'ImageGallery';
 import s from './ImageInfo.module.css';
 import Button from 'Button';
 import Modal from 'Modal';
-import { useState, useEffect } from 'react/cjs/react.development';
-// import PropTypes from 'prop-types'
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 const Status = {
   IDLE: 'idle',
   PENDING: 'pending',
@@ -91,3 +91,6 @@ export default function ImageInfo({ query }) {
     );
   }
 }
+ImageInfo.propTypes = {
+  query: PropTypes.string,
+};
